@@ -1,33 +1,45 @@
 /**
  * Created by LuceroPenarrieta on 1/20/2016.
  */
-var doOperations=function()
+var CalculMath=function()
 {
-    var numbers=arguments;
-    var min=numbers[0];
-    var max=numbers[0];
+    var numbers;
+    var min;
+    var max;
+    var sum_numbers;
+
+    this.doOperations= function () {
+        numbers=arguments;
+        min=numbers[0];
+        max=numbers[0];
+
+        console.log('MAX is:',getMax(0,numbers.length-1,max));
+        console.log('MIN is:',getMin(0,numbers.length-1,min));
+        //console.log('AVG is:',getAvg());
+        console.log('SUM is:',getSum(0,numbers.length-1));
+    };
 
     this.getSum=function(){
-        return getSumT(0,numbers.length-1);
+        sum_numbers=arguments;
+        return getSum(0,sum_numbers.length-1);
     };
-    getSumT=function(ini,end){
+
+    var getSum=function(ini,end){
         if(ini===end){
-            return numbers[end];
+            return sum_numbers[end];
         }
-        return numbers[ini]+ getSumT(ini+1,end);
+        return sum_numbers[ini]+ getSum(ini+1,end);
     };
     ////////////////////////////////////////
-    this.getAvg=function(){
-        return getAvgT();
-    };
-    getAvgT=function(){
-        return getSumT(0,numbers.length-1)/numbers.length;
+
+    var getAvg=function(){
+
+        return getSum(0,numbers.length-1)/numbers.length;
     };
     ////////////////////////////////////////
-    this.getMin=function(){
-        return getMinT(0,numbers.length-1,min);
-    };
-    getMinT=function(ini,end,min){
+
+    var getMin=function(ini,end,min){
+
         if(ini===end){
             return min;
         }
@@ -36,14 +48,13 @@ var doOperations=function()
                 min = numbers[ini + 1];
 
             }
-            return getMinT(ini+1,end,min);
+            return getMin(ini+1,end,min);
         }
     };
     ///////////////////////////////////////
-    this.getMax= function() {
-        return getMaxT(0,numbers.length-1,max);
-    };
-    getMaxT=function(ini,end,max){
+
+    var getMax=function(ini,end,max){
+
         if(ini===end){
             return max;
         }
@@ -52,7 +63,7 @@ var doOperations=function()
                 max = numbers[ini + 1];
 
             }
-            return getMaxT(ini+1,end,max);
+            return getMax(ini+1,end,max);
         }
 
     };
