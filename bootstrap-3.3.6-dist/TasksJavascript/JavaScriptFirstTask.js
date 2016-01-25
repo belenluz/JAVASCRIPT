@@ -6,7 +6,6 @@ var CalculMath=function()
     var numbers;
     var min;
     var max;
-    var sum_numbers;
 
     this.doOperations= function () {
         numbers=arguments;
@@ -15,46 +14,81 @@ var CalculMath=function()
 
         console.log('MAX is:',getMax(0,numbers.length-1,max));
         console.log('MIN is:',getMin(0,numbers.length-1,min));
-        //console.log('AVG is:',getAvg());
+        console.log('AVG is:',getAvg());
         console.log('SUM is:',getSum(0,numbers.length-1));
     };
+    /**
+     * getSum()=Is a function that add all the parameters.
+     * getSum(ini, end)
+     * using two counters: ini= parameter that describes the position initial-index.
+     *                     end= parameter that describes the length of the arguments-1.
+     */
 
     this.getSum=function(){
-        sum_numbers=arguments;
-        return getSum(0,sum_numbers.length-1);
-    };
-
-    var getSum=function(ini,end){
-        if(ini===end){
-            return sum_numbers[end];
+        numbers=arguments;
+        if(numbers.length!=0){
+            return getSum(0,numbers.length-1);
         }
-        return sum_numbers[ini]+ getSum(ini+1,end);
     };
-    ////////////////////////////////////////
-
+    var getSum=function(ini,end){
+            if(ini===end){
+                return numbers[end];
+            }
+            return numbers[ini]+ getSum(ini+1,end);
+    };
+    /**
+     * getAvg()=Is a function that use the getSum() function.
+     * To calculate the average of the parameters sending.
+     */
+    this.getAvg=function(){
+        numbers=arguments;
+        if(numbers.length!=0){
+            return getSum(0,numbers.length-1)/numbers.length;
+        }
+    };
     var getAvg=function(){
-
         return getSum(0,numbers.length-1)/numbers.length;
     };
-    ////////////////////////////////////////
+    /**
+     * getMin()=Is a function that select the minor parameter.
+     * getMin(ini, end, min)
+     * using three counters: ini= parameter that describes the position initial-index.
+     *                       end= parameter that describes the length of the arguments-1.
+     *                       min= parameter that stores the min value(uploaded).
+     */
 
-    var getMin=function(ini,end,min){
-
-        if(ini===end){
-            return min;
-        }
-        else {
-            if (numbers[ini+1]<min) {
-                min = numbers[ini + 1];
-
-            }
-            return getMin(ini+1,end,min);
+    this.getMin=function(){
+        numbers=arguments;
+        if(numbers.length!=0){
+            return getMin(0,numbers.length-1,min);
         }
     };
-    ///////////////////////////////////////
+    var getMin=function(ini,end,min){
+            if(ini===end){
+                return min;
+            }
+            else {
+                if (numbers[ini+1]<min) {
+                    min = numbers[ini + 1];
 
+                }
+                return getMin(ini+1,end,min);
+            }
+    };
+    /**
+     * getMax()=Is a function that select the max parameter.
+     * getMax(ini, end, max)
+     * using three counters: ini= parameter that describes the position initial-index.
+     *                       end= parameter that describes the length of the arguments-1.
+     *                       max= parameter that stores the max value(uploaded).
+     */
+    this.getMax=function(){
+        numbers=arguments;
+        if(numbers.length!=0){
+            return getMin(0,numbers.length-1,max);
+        }
+    };
     var getMax=function(ini,end,max){
-
         if(ini===end){
             return max;
         }
