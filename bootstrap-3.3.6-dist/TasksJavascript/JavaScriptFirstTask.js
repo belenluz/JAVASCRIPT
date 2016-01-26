@@ -85,7 +85,7 @@ var CalculMath=function()
     this.getMax=function(){
         numbers=arguments;
         if(numbers.length!=0){
-            return getMin(0,numbers.length-1,max);
+            return getMax(0,numbers.length-1,max);
         }
     };
     var getMax=function(ini,end,max){
@@ -102,3 +102,6 @@ var CalculMath=function()
 
     };
 };
+
+
+
