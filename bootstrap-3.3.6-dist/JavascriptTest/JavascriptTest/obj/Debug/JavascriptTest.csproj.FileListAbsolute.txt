@@ -1,0 +1,6 @@
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\bin\JavascriptTest.dll.config
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\bin\JavascriptTest.dll
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\bin\JavascriptTest.pdb
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\obj\Debug\JavascriptTest.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\obj\Debug\JavascriptTest.dll
+c:\users\administrator\documents\visual studio 2013\Projects\JavascriptTest\JavascriptTest\obj\Debug\JavascriptTest.pdb
